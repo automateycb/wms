@@ -1,0 +1,166 @@
+[ 2017-03-23T14:18:05+08:00 ] 127.0.0.1 /index.php/Input/delete/id/56
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.031200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.032200s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0156s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 519 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0336s ]
+SQL: DELETE FROM `wms_goods` WHERE `id` = 56 [ RunTime:0.1846s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.0320s ]
+SQL: DELETE FROM `wms_goods_category` WHERE `goods_id` = 56 [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `wms_goods_attrbute` [ RunTime:0.1794s ]
+SQL: DELETE FROM `wms_goods_attrbute` WHERE `goods_id` = 56 [ RunTime:0.0156s ]
+
+[ 2017-03-23T14:18:10+08:00 ] 127.0.0.1 /index.php/Input/delete/id/57
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.2418s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 519 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0312s ]
+SQL: DELETE FROM `wms_goods` WHERE `id` = 57 [ RunTime:0.0624s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.1092s ]
+SQL: DELETE FROM `wms_goods_category` WHERE `goods_id` = 57 [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `wms_goods_attrbute` [ RunTime:0.0708s ]
+SQL: DELETE FROM `wms_goods_attrbute` WHERE `goods_id` = 57 [ RunTime:0.0000s ]
+
+[ 2017-03-23T14:38:13+08:00 ] 127.0.0.1 /index.php/Goods/index.html/upload?sn=30&name=&order=id+asc&brand=&category=&start_price=&end_price=&start_stock=&end_stock=&start_time=&end_time=
+ERR: 非法操作:index.html
+
+[ 2017-03-23T14:38:18+08:00 ] 127.0.0.1 /index.php/Goods/index.html/upload?sn=30&name=&order=id+asc&brand=&category=&start_price=&end_price=&start_stock=&end_stock=&start_time=&end_time=
+ERR: 非法操作:index.html
+
+[ 2017-03-23T14:41:52+08:00 ] 127.0.0.1 /index.php/Goods/index.html/upload?sn=&name=&order=id+asc&brand=&category=1&start_price=&end_price=&start_stock=&end_stock=&start_time=&end_time=
+ERR: 非法操作:index.html
+
+[ 2017-03-23T14:42:59+08:00 ] 127.0.0.1 /index.php/Input/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0312s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0156s ]
+NOTIC: [2048] Declaration of Home\Model\CategoryModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\CategoryModel.class.php 第 81 行.
+SQL: SHOW COLUMNS FROM `wms_category` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`name` FROM `wms_category`  [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Home\Model\BrandModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\BrandModel.class.php 第 69 行.
+SQL: SHOW COLUMNS FROM `wms_brand` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`name` FROM `wms_brand`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `wms_store` [ RunTime:0.0156s ]
+SQL: SELECT `id`,`name` FROM `wms_store`  [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 519 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0156s ]
+NOTIC: [8] Undefined index: validate E:\wamp\www\wms\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `wms_goods` WHERE `name` = 'PD' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: sn E:\wamp\www\wms\ThinkPHP\Library\Think\Model.class.php 第 1294 行.
+SQL: SELECT * FROM `wms_goods` WHERE `sn` = null LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto E:\wamp\www\wms\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [8] Undefined index: output_sum E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 35 行.
+SQL: INSERT INTO `wms_goods` (`name`,`asset_number`,`position`,`sum`,`price`,`brand_id`,`time`,`total`,`stock`) VALUES ('PD','QWERTY','武器二','123','300','10','1490251379','36900','123') [ RunTime:0.0624s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.0156s ]
+SQL: INSERT INTO `wms_goods_category` (`goods_id`,`category_id`) VALUES ('58','1') [ RunTime:0.0624s ]
+
+[ 2017-03-23T14:45:28+08:00 ] 127.0.0.1 /index.php/Input/delete/id/58
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0156s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 519 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0312s ]
+SQL: DELETE FROM `wms_goods` WHERE `id` = 58 [ RunTime:0.0780s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.0312s ]
+SQL: DELETE FROM `wms_goods_category` WHERE `goods_id` = 58 [ RunTime:0.0468s ]
+SQL: SHOW COLUMNS FROM `wms_goods_attrbute` [ RunTime:0.0156s ]
+SQL: DELETE FROM `wms_goods_attrbute` WHERE `goods_id` = 58 [ RunTime:0.0000s ]
+
+[ 2017-03-23T14:49:37+08:00 ] 127.0.0.1 /index.php/Goods/index.html/upload?sn=&name=&order=id+asc&brand=10&category=&start_price=&end_price=&start_stock=&end_stock=&start_time=&end_time=
+ERR: 非法操作:index.html
+
+[ 2017-03-23T14:49:44+08:00 ] 127.0.0.1 /index.php/Goods/index.html/upload?sn=&name=&order=id+asc&brand=10&category=1&start_price=&end_price=&start_stock=&end_stock=&start_time=&end_time=
+ERR: 非法操作:index.html
+
+[ 2017-03-23T14:53:23+08:00 ] 127.0.0.1 /index.php/Input/delete/id/60
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0156s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 519 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0156s ]
+SQL: DELETE FROM `wms_goods` WHERE `id` = 60 [ RunTime:0.0478s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.0156s ]
+SQL: DELETE FROM `wms_goods_category` WHERE `goods_id` = 60 [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `wms_goods_attrbute` [ RunTime:0.0156s ]
+SQL: DELETE FROM `wms_goods_attrbute` WHERE `goods_id` = 60 [ RunTime:0.0000s ]
+
+[ 2017-03-23T14:53:38+08:00 ] 127.0.0.1 /index.php/Input/delete/id/59
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0156s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0156s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 519 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0156s ]
+SQL: DELETE FROM `wms_goods` WHERE `id` = 59 [ RunTime:0.0628s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.0312s ]
+SQL: DELETE FROM `wms_goods_category` WHERE `goods_id` = 59 [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `wms_goods_attrbute` [ RunTime:0.0156s ]
+SQL: DELETE FROM `wms_goods_attrbute` WHERE `goods_id` = 59 [ RunTime:0.0000s ]
+
+[ 2017-03-23T14:54:05+08:00 ] 127.0.0.1 /index.php/Input/delete/id/61
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0332s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 519 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0156s ]
+SQL: DELETE FROM `wms_goods` WHERE `id` = 61 [ RunTime:0.0312s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.0050s ]
+SQL: DELETE FROM `wms_goods_category` WHERE `goods_id` = 61 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `wms_goods_attrbute` [ RunTime:0.0170s ]
+SQL: DELETE FROM `wms_goods_attrbute` WHERE `goods_id` = 61 [ RunTime:0.0000s ]
+
+[ 2017-03-23T14:54:09+08:00 ] 127.0.0.1 /index.php/Input/delete/id/62
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0156s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 519 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0156s ]
+SQL: DELETE FROM `wms_goods` WHERE `id` = 62 [ RunTime:0.0780s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.0156s ]
+SQL: DELETE FROM `wms_goods_category` WHERE `goods_id` = 62 [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `wms_goods_attrbute` [ RunTime:0.0000s ]
+SQL: DELETE FROM `wms_goods_attrbute` WHERE `goods_id` = 62 [ RunTime:0.0000s ]
+
+[ 2017-03-23T15:23:47+08:00 ] 127.0.0.1 /index.php/Input/delete/id/53
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0432s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 519 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0156s ]
+SQL: DELETE FROM `wms_goods` WHERE `id` = 53 [ RunTime:0.1716s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.0342s ]
+SQL: DELETE FROM `wms_goods_category` WHERE `goods_id` = 53 [ RunTime:0.0624s ]
+SQL: SHOW COLUMNS FROM `wms_goods_attrbute` [ RunTime:0.0312s ]
+SQL: DELETE FROM `wms_goods_attrbute` WHERE `goods_id` = 53 [ RunTime:0.0000s ]
+
+[ 2017-03-23T15:36:01+08:00 ] 127.0.0.1 /index.php/Output/expUser
+ERR: 非法操作:expUser
+
+[ 2017-03-23T15:36:47+08:00 ] 127.0.0.1 /index.php/Output/expUser
+ERR: 非法操作:expUser
+
+[ 2017-03-23T15:48:13+08:00 ] 127.0.0.1 /index.php/Output/expUser
+ERR: 1054:Champ 'id' inconnu dans field list
+ [ SQL语句 ] : SELECT `id`,`goods_name`,`count`,`name`,`create_time` FROM `wms_record` 
+
+[ 2017-03-23T16:22:58+08:00 ] 127.0.0.1 /index.php/Goods/index.html/upload?id=&name=&order=id+asc&brand=&category=
+ERR: 非法操作:index.html
+

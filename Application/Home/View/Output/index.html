@@ -1,0 +1,143 @@
+<layout name="Public/layout"/>
+{:jumps($infos['authority'],CONTROLLER_NAME)}
+
+        <!--主要区域开始-->
+        <div id="main">        
+            <form action="__SELF__" method="get" id="search">
+                
+            <!--查询-->
+            <div class="search_add">                        
+                    <div>物品ID：<input type="text" class="text_search width50" value="{:I('get.id')}" name='id'/></div>                            
+                    <div>名称：<input type="text" class="width70 text_search" value="{:I('get.name')}" name='name'/></div>
+
+                    <div>
+                    排序：
+                    <select class="select_search" name='order'>
+                        <option value="id asc">默认</option>
+                        <option value="price asc" <php> if( I('get.order')=='price asc' ){ echo 'selected';} </php> >  ↑ 价格从低到高 </option>                        
+                        <option value="price desc" <php> if( I('get.order')=='price desc' ){ echo 'selected';} </php> > ↓ 价格从高到低 </option>
+                        <option value="count asc" <php> if( I('get.order')=='count asc' ){ echo 'selected';} </php> >  ↑ 库存从低到高 </option>                        
+                        <option value="count desc" <php> if( I('get.order')=='count desc' ){ echo 'selected';} </php> > ↓ 库存从高到低 </option> 
+                        <option value="time asc" <php> if( I('get.order')=='time asc' ){ echo 'selected';} </php> >   ↑ 日期从低到高 </option>                        
+                        <option value="time desc" <php> if( I('get.order')=='time desc' ){ echo 'selected';} </php> >  ↓ 日期从高到低 </option> 
+                    </select>
+                    </div>
+                    
+                    <div>
+                        品牌：
+                        <select class="select_search width70" name='brand' id='status'>
+                            <option value="">全部</option>
+                            <!--遍历品牌-->                            
+                            <volist name="brand" id="vo">
+                            <option value="{$vo.id}" <php> if( I('get.brand')==$vo['id'] ){ echo 'selected';} </php>  >{$vo.name}</option>
+                            </volist>                            
+                            
+                        </select>
+                    </div>
+
+                    <div>
+                    类型：
+                    <select class="select_search" name='category'>
+                    <option value="">全部</option>
+                    <!--遍历类型-->                            
+                        <volist name="category" id="vo">
+                        <option value="{$vo.id}" <php> if( I('get.category')==$vo['id'] ){ echo 'selected';} </php>  >{$vo.name}</option>
+                    </volist>                            
+                    </select>
+                    </div>
+                    
+                    <!--搜索开始-->
+                    <div>
+                        <input type="button" value="搜索" class="btn_search" id="btn_search" onclick="search()"/>
+                        <button onclick="preview('data');" id="print">打印</button>
+                    </div> 
+
+                    <div>
+                    <input type="button" value="出库记录" class="btn_add" onclick="location.href='__CONTROLLER__/record';" />
+                    </div>  
+                    
+            </div>  
+                                            
+            </form> 
+
+                <!--数据区域：用表格展示数据-->   
+                <div id="data">            
+                    <table id="datalist">
+                    <tr>
+                        <th class="width120">物品ID</th>
+                        <th>物品名称</th>
+                        <th>类型</th>
+                        <th class="width120">仓库位置</th>>
+                        <th class="width100">剩余库存</th> 
+                        <th class="width100">出库总数</th> 
+                        <th class="width120">操作</th>
+                    </tr>
+                   <volist name="res['res']" id='vo' empty="$empty"> 
+            
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.name}</td>
+                        <td>{$vo.category_name}</td>
+                        <td>{$vo.position}</td>
+                        <td>{$vo.stock} </td>   
+                        <td>{$vo.output_sum} </td>              
+                        <td><a href="__CONTROLLER__/item/id/{$vo.id}" title="出库操作">出库操作</a></td>
+                    </tr>
+                   </volist>                     
+
+                </table>
+                </div>                    
+                <!--分页-->
+                <div id="pages">
+                    {$res['page']}
+                </div>                    
+            
+        </div>
+        <!--主要区域结束-->
+
+<script type="text/javascript">
+    $(function(){
+        //点击之后的图标
+        $('.output_off').addClass('output_on').removeClass('output_off');
+
+    });  
+
+    function search(){
+        layer.load(2); //加载
+        setTimeout(function(){
+            $('#search').submit();
+        },{:C('SEARCH_TIME')});
+        
+    }
+    
+    $(function(){
+        
+        $('#status').change(function(){
+            $('#search').submit();
+        });
+        
+        $('select').change(function(){
+            $('#search').submit();
+        });        
+    });
+    
+    //键盘事件    
+    $(document).keydown(function(event){ 
+        if(event.keyCode == 13){
+//            alert(event.keyCode); 
+            search();
+        }            
+                    
+    });          
+    
+</script>
+<script type="text/javascript">
+       
+       function preview(id){
+           var sprnhtml=$('#'+id).html();   //获取区域内容
+           var selfhtml=$('body').html(); //获取当前页的html
+           $('body').html(sprnhtml);
+           window.print();  //打印
+           $('body').html(selfhtml); //赋值
+       }
+</script>

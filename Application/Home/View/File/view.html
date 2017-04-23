@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title></title>
+</head>
+<body>
+
+<form action="__URL__/upload" method="POST" enctype="multipart/form-data">
+    <table width="500px" align="center" cellspacing="10">
+        <th>文件名</th><th>文件描述</th><th>文件下载</th>
+<volist name="data" id="vo" >
+    <tr><td align="center"width="30%">{$vo.filename}</td><td align="center" width="50%">{$vo.depict}</td><td align="center"  width="20%"><a href="{:U('download',array('id'=>$vo['id'],''))}">下载</a></td></tr>
+</volist>
+       <tr> <td colspan="2">{$show}</td></tr>
+</table>
+</form>
+</body>
+</html>

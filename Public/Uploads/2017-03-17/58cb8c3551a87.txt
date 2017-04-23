@@ -1,0 +1,88 @@
+2017-02-28 09:37:27,124 [SEND ] L2_VCREventReportReply - L2_MB_VCREventReportReplyBlock (1401, 0000) 
+<L2_W_VCREventReportReplyBlock (W, 0x0030D0, 75)
+	<A 0 10 VCRPanelID 'TB722294BA04        '>
+	<I 10 1 ReturnCode '1'>
+	<I 11 1 CassetteSequenceNo '119'>
+	<I 12 1 JobSequenceNo '9'>
+	<I 13 1 CIMMode '1'>
+	<I 14 1 JobJudge '0'>
+	<A 15 10 PPID '546D042513          '>
+	<A 25 10 PanelID 'TB722294BA04        '>
+	<I 35 1 CHECK_WORKORDER_FLAG '1'>
+	<I 36 1 LSRC_FLAG '1'>
+	<I 37 1 CLEAN_BYPAS_FLAG '1'>
+	<I 38 1 OCH_NG_FLAG '0'>
+	<I 39 1 PCB_NG_FLAG '0'>
+	<I 40 1 OCH_shift_disable_FLAG '0'>
+	<I 41 1 OCH_akkcom_disable_FLAG '0'>
+	<I 42 1 OCH_burr_disabel_FLAG '0'>
+	<I 43 1 OCH_shift_samplingpass_FLAG '0'>
+	<I 44 1 OCH_akkcom_samplingpass_FLAG '0'>
+	<I 45 1 OCH_burr_samplingpass_FLAG '0'>
+	<I 46 1 OCH_noprocessing_FLAG '0'>
+	<I 47 1 ADJUST_FLAG '0'>
+	<A 48 5 CarrierSetCode '          '>
+	<A 53 10 WorkOrderName '                    '>
+	<I 63 1 SamplingSlotFlag '0'>
+	<I 64 1 OLBACF1 '0'>
+	<I 65 1 OLBACF2 '0'>
+	<I 66 1 OLBACF3 '0'>
+	<I 67 1 OLBACF4 '0'>
+	<I 68 1 PCBACF1 '0'>
+	<I 69 1 PCBACF2 '0'>
+	<I 70 1 PCBACF3 '0'>
+	<I 71 1 PCBACF4 '0'>
+	<I 72 1 Reserved5 '0'>
+	<I 73 1 Reserved6 '0'>
+	<I 74 1 Reserved7 '0'>
+>
+2017-02-28 09:37:47,248 [RECV ] L2_PanelValidationReport - L2_MB_PanelValidationReportBlock (0401, 0000) 31 ms
+<L2_W_PanelValidationReportBlock (W, 0x00034A, 20)
+	<A 0 10 PanelLabelID 'TB722294BA04        '>
+	<A 10 10 HostPanelID 'TB722294BA04        '>
+>
+
+
+2017-02-28 09:37:49,291 [SEND ] L2_VCREventReportReply - L2_MB_VCREventReportReplyBlock (1401, 0000) 
+<L2_W_VCREventReportReplyBlock (W, 0x0030D0, 75)
+	<A 0 10 VCRPanelID 'TB722266BA01        '>
+	<I 10 1 ReturnCode '1'>
+	<I 11 1 CassetteSequenceNo '1691'>
+	<I 12 1 JobSequenceNo '3'>
+	<I 13 1 CIMMode '1'>
+	<I 14 1 JobJudge '0'>
+	<A 15 10 PPID '546D042513          '>
+	<A 25 10 PanelID 'TB722266BA01        '>
+	<I 35 1 CHECK_WORKORDER_FLAG '1'>
+	<I 36 1 LSRC_FLAG '1'>
+	<I 37 1 CLEAN_BYPAS_FLAG '1'>
+	<I 38 1 OCH_NG_FLAG '0'>
+	<I 39 1 PCB_NG_FLAG '0'>
+	<I 40 1 OCH_shift_disable_FLAG '1'>
+	<I 41 1 OCH_akkcom_disable_FLAG '1'>
+	<I 42 1 OCH_burr_disabel_FLAG '1'>
+	<I 43 1 OCH_shift_samplingpass_FLAG '1'>
+	<I 44 1 OCH_akkcom_samplingpass_FLAG '1'>
+	<I 45 1 OCH_burr_samplingpass_FLAG '1'>
+	<I 46 1 OCH_noprocessing_FLAG '0'>
+	<I 47 1 ADJUST_FLAG '0'>
+	<A 48 5 CarrierSetCode '          '>
+	<A 53 10 WorkOrderName '                    '>
+	<I 63 1 SamplingSlotFlag '0'>
+	<I 64 1 OLBACF1 '0'>
+	<I 65 1 OLBACF2 '0'>
+	<I 66 1 OLBACF3 '0'>
+	<I 67 1 OLBACF4 '0'>
+	<I 68 1 PCBACF1 '0'>
+	<I 69 1 PCBACF2 '0'>
+	<I 70 1 PCBACF3 '0'>
+	<I 71 1 PCBACF4 '0'>
+	<I 72 1 Reserved5 '0'>
+	<I 73 1 Reserved6 '0'>
+	<I 74 1 Reserved7 '0'>
+>
+2017-02-28 09:38:10,039 [RECV ] L2_PanelValidationReport - L2_MB_PanelValidationReportBlock (0401, 0000) 15 ms
+<L2_W_PanelValidationReportBlock (W, 0x00034A, 20)
+	<A 0 10 PanelLabelID 'TB722266BA01        '>
+	<A 10 10 HostPanelID 'TB722266BA01        '>
+>

@@ -1,0 +1,136 @@
+<layout name="Public/layout"/>
+{:jumps($infos['authority'],CONTROLLER_NAME)} 
+        
+        <!--主要区域开始-->
+        <div id="main">
+        <form action="__SELF__" method="get" id="search">
+                <!--查询-->
+                <div class="search_add">                        
+                    <!-- <div>账号：<span class="readonly width70">{$infos.nickname}</span></div> -->
+                    
+                    <div>
+                        姓名:<input type="text" name="name"class="text_search width100" value="{:I('get.name')}"/>
+                    </div>
+                    
+                    <div>
+                        日期:<input type="date" name="create_time" class="width100 text_search" value="{:I('get.create_time')}"/>
+                    </div>
+
+                    <div>
+                        品牌：
+                        <select class="select_search width70" name='brand' id='status'>
+                            <option value="">全部</option>
+                            <!--遍历品牌-->                            
+                            <volist name="brand" id="vo">
+                            <option value="{$vo.id}" <php> if( I('get.brand')==$vo['id'] ){ echo 'selected';} </php>  >{$vo.name}</option>
+                            </volist>                            
+                            
+                        </select>
+                    </div>
+
+                    <div>
+                        类型：
+                        <select class="select_search" name='category'>
+                            <option value="">全部</option>
+                       <!--遍历类型-->                            
+                        <volist name="category" id="vo">
+                            <option value="{$vo.id}" <php> if( I('get.category')==$vo['id'] ){ echo 'selected';} </php>  >{$vo.name}</option>
+                        </volist>                            
+                            
+                        </select>
+                    </div>
+
+                    <div>
+                        <input type="submit" value="搜索" class="btn_search" />
+                        <button onclick="preview('data');" id="print">打印</button>
+                    </div>
+        </form>         
+
+                    <!--    <div>
+                        <form action="{:U('Input/impUser')}" method="post" enctype="multipart/form-data">
+                            <input type="file"  class="width200 text_search" name="import"/>
+                            <input type="submit" class="btn_add" value="Excel导入"/>
+                        </form>
+                    </div> -->
+                    
+                    <!-- Excel导出数据 -->
+                    <div>
+                         <input type="button" value="导出数据" class="btn_add" onclick="location.href='__CONTROLLER__/expUser';" />
+                    </div>
+
+                    <input type="button" value="返回" class="btn_add" onclick="location.href='__CONTROLLER__/index';" />
+                </div>
+      
+       
+                <!--数据区域：用表格展示数据-->     
+                <div id="data">            
+                    <table id="datalist">
+                        <tr>
+                            <th>用户ID</th>
+                            <th>姓名</th>
+                            <th>日期</th>
+                            <th>物品ID</th>
+                            <th>物品名称</th>
+                            <th>类型</th>
+                            <th>出库数量</th>
+                            
+                        </tr>
+
+<volist name="res['res']" id="vo" empty="$empty">
+                        <tr>
+                            <td>{$vo.no}</td>
+                            <td>{$vo.name}</td>
+                            <td>{:date('Y-m-d H:i:s',$vo['create_time'])}</td>
+                            <td>{$vo.goods_id}</td>
+                            <td>{$vo.goods_name}</td>
+                            <!-- <td>{:explode(',',$vo['value'])[0]}</td>
+                            <td>{:explode(',',$vo['value'])[1]}</td> -->
+                            <td>{$vo.category_name}</td>
+                            <td>{$vo.count}</td>
+                            
+                        </tr>
+</volist>
+                    </table>
+                </div>
+                <!--分页-->
+                <div id="pages">
+                    {$res['page']}
+                </div>                    
+            </form>
+        </div>
+        <!--主要区域结束-->
+<script type="text/javascript">
+    $(function(){
+        //点击之后的图标
+        $('.output_off').addClass('output_on').removeClass('output_off');
+
+    });   
+</script>
+<script type="text/javascript">
+    function search(){
+        layer.load(2); //加载
+        setTimeout(function(){
+            $('#search').submit();
+        },{:C('SEARCH_TIME')});
+        
+    }
+    
+    $(function(){
+        
+        $('#status').change(function(){
+            $('#search').submit();
+        });
+        
+        $('select').change(function(){
+            $('#search').submit();
+        });        
+    });
+    
+    //键盘事件    
+    $(document).keydown(function(event){ 
+        if(event.keyCode == 13){
+            search();
+        }            
+                    
+    });      
+</script>    

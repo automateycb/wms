@@ -1,0 +1,59 @@
+2017-02-28 09:48:20,640 [SEND ] L10_PanelGradeRequestReply - L10_MB_PanelGradeRequestReplyBlock (1401, 0000) 
+<L10_W_PanelGradeRequestReplyBlock (W, 0x00399B, 32)
+	<A 0 10 PanelID 'TB722888AL06        '>
+	<A 10 1 PanelGrade 'Y1'>
+	<I 11 1 ReturnCode '2'>
+	<A 12 2 OwnerID 'RESD'>
+	<A 14 10 PFCD '12T5461D044002'>
+	<A 24 2 Location '400N'>
+>
+
+2017-02-28 09:49:39,592 [SEND ] L10_PanelGradeRequestReply - L10_MB_PanelGradeRequestReplyBlock (1401, 0000) 
+<L10_W_PanelGradeRequestReplyBlock (W, 0x00399B, 32)
+	<A 0 10 PanelID 'TB722888AK04        '>
+	<A 10 1 PanelGrade 'Y1'>
+	<I 11 1 ReturnCode '2'>
+	<A 12 2 OwnerID 'RESD'>
+	<A 14 10 PFCD '12T5461D044002'>
+	<A 24 2 Location '400N'>
+>
+
+
+
+2017-02-28 09:50:02,259 [SEND ] L10_PanelGradeRequestReply - L10_MB_PanelGradeRequestReplyBlock (1401, 0000) 
+<L10_W_PanelGradeRequestReplyBlock (W, 0x00399B, 32)
+	<A 0 10 PanelID 'TB721942AR05        '>
+	<A 10 1 PanelGrade 'Y1'>
+	<I 11 1 ReturnCode '1'>
+	<A 12 2 OwnerID 'RESD'>
+	<A 14 10 PFCD '12T5461D044002'>
+	<A 24 2 Location '400N'>
+>
+2017-02-28 09:50:31,306 [RECV ] L10_BoxDataReport - L10_MB_BoxDataBlock (0401, 0000) 31 ms
+<L10_W_BoxDataBlock (W, 0x00285E, 37)
+	<A 0 10 PanelID 'TB721942AR05        '>
+	<I 10 1 Port '1'>
+	<A 11 2 PanelGrade 'Y1  '>
+	<I 13 1 FirstPanelFlag '2'>
+	<I 14 1 Boxcapacity '16'>
+	<A 15 12 BoxID 'Y0MC0200211722800261    '>
+>
+
+2017-02-28 09:52:19,445 [SEND ] L10_PanelGradeRequestReply - L10_MB_PanelGradeRequestReplyBlock (1401, 0000) 
+<L10_W_PanelGradeRequestReplyBlock (W, 0x00399B, 32)
+	<A 0 10 PanelID 'TB722888AM06        '>
+	<A 10 1 PanelGrade 'Y1'>
+	<I 11 1 ReturnCode '1'>
+	<A 12 2 OwnerID 'RESD'>
+	<A 14 10 PFCD '12T5461D044002'>
+	<A 24 2 Location '400N'>
+>
+2017-02-28 09:52:47,151 [RECV ] L10_BoxDataReport - L10_MB_BoxDataBlock (0401, 0000) 15 ms
+<L10_W_BoxDataBlock (W, 0x00285E, 37)
+	<A 0 10 PanelID 'TB722888AM06        '>
+	<I 10 1 Port '1'>
+	<A 11 2 PanelGrade 'Y1  '>
+	<I 13 1 FirstPanelFlag '2'>
+	<I 14 1 Boxcapacity '16'>
+	<A 15 12 BoxID 'Y0MC0200211722800261    '>
+>

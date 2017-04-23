@@ -1,0 +1,28 @@
+[ 2017-03-21T19:08:32+08:00 ] 127.0.0.1 /index.php/Excel/impUser.html
+ERR: The filename ./Public/Excel/1490094512.xls is not recognised as an OLE file
+
+[ 2017-03-21T19:15:31+08:00 ] 127.0.0.1 /index.php/Excel/impUser.html
+ERR: The filename ./Public/Excel/1490094931.xls is not recognised as an OLE file
+
+[ 2017-03-21T19:16:34+08:00 ] 127.0.0.1 /index.php/Excel/impUser.html
+ERR: The filename ./Public/Excel/1490094994.xls is not recognised as an OLE file
+
+[ 2017-03-21T19:18:57+08:00 ] 127.0.0.1 /index.php/Excel/expUser.html
+ERR: 1054:Champ 'tid' inconnu dans field list
+ [ SQL语句 ] : SELECT `id`,`tid`,`name`,`danwei`,`phone` FROM `wms_contacts` 
+
+[ 2017-03-21T19:24:09+08:00 ] 127.0.0.1 /index.php/Excel/impUser.html
+ERR: The filename ./Public/Excel/1490095449.xlsx is not recognised as an OLE file
+
+[ 2017-03-21T20:08:20+08:00 ] 127.0.0.1 /index.php/Excel/impUser.html
+ERR: 1062:Duplicata du champ '0' pour la clef 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `wms_contacts` (`name`) VALUES ('李四')
+
+[ 2017-03-21T20:09:02+08:00 ] 127.0.0.1 /index.php/Excel/impUser.html
+ERR: 1062:Duplicata du champ '0' pour la clef 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `wms_contacts` (`name`) VALUES ('张三')
+
+[ 2017-03-21T20:09:55+08:00 ] 127.0.0.1 /index.php/Excel/impUser.html
+ERR: 1062:Duplicata du champ '0' pour la clef 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `wms_contacts` (`name`) VALUES ('李四')
+
