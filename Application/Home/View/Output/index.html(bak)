@@ -5,67 +5,62 @@
         <div id="main">        
             <form action="__SELF__" method="get" id="search">
                 
-                <!--查询-->
-                <div class="search_add">                        
-                    <div>物品ID：<input type="text" class="text_search width130" value="{:I('get.sn')}" name='sn'/></div>                            
-                    <div>名称：<input type="text" class="width110 text_search" value="{:I('get.name')}" name='name'/></div>
+            <!--查询-->
+            <div class="search_add">                        
+                    <div>物品ID：<input type="text" class="text_search width50" value="{:I('get.id')}" name='id'/></div>                            
+                    <div>名称：<input type="text" class="width70 text_search" value="{:I('get.name')}" name='name'/></div>
 
-                        <div>
-                        排序：
-                        <select class="select_search" name='order'>
-                            <option value="id asc">默认</option>
-                            <option value="price asc" <php> if( I('get.order')=='price asc' ){ echo 'selected';} </php> >  ↑ 价格从低到高 </option>                        
-                            <option value="price desc" <php> if( I('get.order')=='price desc' ){ echo 'selected';} </php> > ↓ 价格从高到低 </option>
-                            <option value="count asc" <php> if( I('get.order')=='count asc' ){ echo 'selected';} </php> >  ↑ 库存从低到高 </option>                        
-                            <option value="count desc" <php> if( I('get.order')=='count desc' ){ echo 'selected';} </php> > ↓ 库存从高到低 </option> 
-                            <option value="time asc" <php> if( I('get.order')=='time asc' ){ echo 'selected';} </php> >   ↑ 日期从低到高 </option>                        
-                            <option value="time desc" <php> if( I('get.order')=='time desc' ){ echo 'selected';} </php> >  ↓ 日期从高到低 </option> 
-                        </select>
-                        </div>
-                    
-                        <div>
-                        类型：
-                        <select class="select_search" name='category'>
-                        <option value="">全部</option>
-                        <!--遍历类型-->                            
-                            <volist name="category" id="vo">
-                            <option value="{$vo.id}" <php> if( I('get.category')==$vo['id'] ){ echo 'selected';} </php>  >{$vo.name}</option>
-                        </volist>                            
-                        </select>
-                        </div>
-
-                    <input type="button" value="出库记录" class="btn_add" onclick="location.href='__CONTROLLER__/record';" />
-                    
-                    <div style='margin:5px 0;display:block; '>
-                        <div>
-                            价格：<input type="text" class="width80 text_search" value="{:I('get.start_price')}" name='start_price'/>
-                            -
-                            <input type="text" class="width80 text_search" value="{:I('get.end_price')}" name='end_price'/>
-                        </div>
-                        
-                        <div>
-                            日期：<input type="date" class="width130 text_search" value="{:I('get.start_time')}" name='start_time'/>
-                            -
-                            <input type="date" class="width130 text_search" value="{:I('get.end_time')}" name='end_time'/>
-                        </div>                            
-                        
+                    <div>
+                    排序：
+                    <select class="select_search" name='order'>
+                        <option value="id asc">默认</option>
+                        <option value="price asc" <php> if( I('get.order')=='price asc' ){ echo 'selected';} </php> >  ↑ 价格从低到高 </option>                        
+                        <option value="price desc" <php> if( I('get.order')=='price desc' ){ echo 'selected';} </php> > ↓ 价格从高到低 </option>
+                        <option value="count asc" <php> if( I('get.order')=='count asc' ){ echo 'selected';} </php> >  ↑ 库存从低到高 </option>                        
+                        <option value="count desc" <php> if( I('get.order')=='count desc' ){ echo 'selected';} </php> > ↓ 库存从高到低 </option> 
+                        <option value="time asc" <php> if( I('get.order')=='time asc' ){ echo 'selected';} </php> >   ↑ 日期从低到高 </option>                        
+                        <option value="time desc" <php> if( I('get.order')=='time desc' ){ echo 'selected';} </php> >  ↓ 日期从高到低 </option> 
+                    </select>
                     </div>
-                      
                     
-                </div>  
-                
-                <!--搜索开始-->
+                    <div>
+                        品牌：
+                        <select class="select_search width70" name='brand' id='status'>
+                            <option value="">全部</option>
+                            <!--遍历品牌-->                            
+                            <volist name="brand" id="vo">
+                            <option value="{$vo.id}" <php> if( I('get.brand')==$vo['id'] ){ echo 'selected';} </php>  >{$vo.name}</option>
+                            </volist>                            
+                            
+                        </select>
+                    </div>
+
+                    <div>
+                    类型：
+                    <select class="select_search" name='category'>
+                    <option value="">全部</option>
+                    <!--遍历类型-->                            
+                        <volist name="category" id="vo">
+                        <option value="{$vo.id}" <php> if( I('get.category')==$vo['id'] ){ echo 'selected';} </php>  >{$vo.name}</option>
+                    </volist>                            
+                    </select>
+                    </div>
+                    
+                    <!--搜索开始-->
                     <div>
                         <input type="button" value="搜索" class="btn_search" id="btn_search" onclick="search()"/>
                         <button onclick="preview('data');" id="print">打印</button>
                     </div> 
 
-                <!--搜索结束-->                
-                
+                    <div>
+                    <input type="button" value="出库记录" class="btn_add" onclick="location.href='__CONTROLLER__/record';" />
+                    </div>  
+                    
+            </div>  
+                                            
             </form> 
 
-
-                <!--数据区域：用表格展示数据-->     
+                <!--数据区域：用表格展示数据-->   
                 <div id="data">            
                     <table id="datalist">
                     <tr>

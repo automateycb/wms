@@ -7,6 +7,14 @@
         <link type="text/css" rel="stylesheet" media="all" href="__PUBLIC__/styles/global_color.css" /> 
         <script src="__PUBLIC__/js/jquery-1.9.1.min.js"></script>
         
+        <script id="font-hack" type="text/javascript">
+        if (/windows/i.test(navigator.userAgent)) {
+            var el = document.createElement('style');
+            el.innerHTML = '' + '@font-face {font-family:"noto-thin";src:local("Microsoft Yahei");}' + '@font-face {font-family:"noto-light";src:local("Microsoft Yahei");}';
+            document.head.insertBefore(el, document.getElementById('font-hack'));
+       }
+       </script>
+        
     </head>
     <body class="index">
         <div class="login_logo">  </div>

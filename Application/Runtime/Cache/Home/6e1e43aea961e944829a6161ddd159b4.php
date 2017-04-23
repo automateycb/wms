@@ -42,7 +42,7 @@
         <!--主要区域开始-->
         <div id="main">
 
-        <form action="/index.php/Input/index.html?id=&amp;name=&amp;order=id+asc&amp;brand=&amp;category=" method="get" id="search" enctype="multipart/form-data">
+        <form action="/index.php/Input/index.html" method="get" id="search" enctype="multipart/form-data">
                 
             <!--查询-->
             <div class="search_add">                        
@@ -112,8 +112,7 @@
                     </div>
             </div>
 
-                
-                <!--数据区域：用表格展示数据-->                   
+                            <!--数据区域：用表格展示数据-->                   
                 <div id="data">            
                     <table id="datalist">
                         
@@ -153,7 +152,8 @@
                     </tr><?php endforeach; endif; else: echo "$empty" ;endif; ?>   
 <!--遍历结束-->                    
                   
-                </table>
+                </table>    
+
                 <p>操作说明：<br />
                 1、通过增加，新增物品信息；<br />
                 2、通过修改，修改原有物品信息；<br />

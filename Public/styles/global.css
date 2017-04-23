@@ -12,8 +12,9 @@ ul, ol
 }
 body
 {
-    font-size: 12px;
-    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 14px;
+    /*font-family: Tahoma,Geneva,sans-serif;*/
+    font-family: Microsoft YaHei,微软雅黑;
     background-position: top;
     background-repeat: repeat-x;
 }
@@ -37,7 +38,7 @@ input, select
 }
 textarea
 {
-    font-size: 12px;
+    font-size: 14px;
     font-family: Tahoma,Geneva,sans-serif;
 }
 .width50
@@ -191,11 +192,12 @@ textarea
 /*正文区域：main*/
 #main
 {
-    min-height: 410px;
-    width: 950px;
+    min-height: 480px;
+    width: 1100px;
+    /*边框与元素之间的间距*/
     padding: 5px;
     margin-top: 5px;
-    max-height: 450px;
+    max-height: 500px;
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
@@ -210,8 +212,8 @@ form.main_form
 /*正文：查询条件部分*/
 div.search_add
 {
-    width: 910px;
-    height: 30px;
+    width: 1100px;
+    height: 40px;
     text-align: right;
     margin-top: 3px;
 }
@@ -239,15 +241,15 @@ div.search_add span
 }
 #datalist td
 {
-    height: 32px;
-    line-height: 32px;
+    height: 40px;
+    line-height: 40px;
 }
 #datalist th
 {
     font-weight: bold;
     text-align: center;
-    height: 35px;
-    line-height: 35px;
+    height: 40px;
+    line-height: 40px;
 }
 td.td_modi,th.td_modi
 {

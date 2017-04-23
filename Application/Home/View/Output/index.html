@@ -4,9 +4,8 @@
         <!--主要区域开始-->
         <div id="main">        
             <form action="__SELF__" method="get" id="search">
-                
-            <!--查询-->
-            <div class="search_add">                        
+                <!--查询-->
+                <div class="search_add">                        
                     <div>物品ID：<input type="text" class="text_search width50" value="{:I('get.id')}" name='id'/></div>                            
                     <div>名称：<input type="text" class="width70 text_search" value="{:I('get.name')}" name='name'/></div>
 
@@ -59,21 +58,21 @@
             </div>  
                                             
             </form> 
-
-                <!--数据区域：用表格展示数据-->   
+             <!--数据区域：用表格展示数据-->   
                 <div id="data">            
-                    <table id="datalist">
+                  <table id="datalist">
                     <tr>
-                        <th class="width120">物品ID</th>
+                        <th>物品ID</th>
                         <th>物品名称</th>
                         <th>类型</th>
-                        <th class="width120">仓库位置</th>>
-                        <th class="width100">剩余库存</th> 
-                        <th class="width100">出库总数</th> 
-                        <th class="width120">操作</th>
+                        <th>仓库位置</th>
+                        <th>剩余库存</th>
+                        <th>出库总数</th>
+                        <th>操作</th>
                     </tr>
-                   <volist name="res['res']" id='vo' empty="$empty"> 
-            
+
+
+                   <volist name="res['res']" id='vo' empty="$empty">           
                     <tr>
                         <td>{$vo.id}</td>
                         <td>{$vo.name}</td>
@@ -84,9 +83,8 @@
                         <td><a href="__CONTROLLER__/item/id/{$vo.id}" title="出库操作">出库操作</a></td>
                     </tr>
                    </volist>                     
-
-                </table>
-                </div>                    
+                  </table> 
+                </div>   
                 <!--分页-->
                 <div id="pages">
                     {$res['page']}

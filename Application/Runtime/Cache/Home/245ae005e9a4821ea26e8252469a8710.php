@@ -42,9 +42,8 @@
         <!--主要区域开始-->
         <div id="main">        
             <form action="/index.php/Output/index.html" method="get" id="search">
-                
-            <!--查询-->
-            <div class="search_add">                        
+                <!--查询-->
+                <div class="search_add">                        
                     <div>物品ID：<input type="text" class="text_search width50" value="<?php echo I('get.id');?>" name='id'/></div>                            
                     <div>名称：<input type="text" class="width70 text_search" value="<?php echo I('get.name');?>" name='name'/></div>
 
@@ -93,19 +92,20 @@
             </div>  
                                             
             </form> 
-
-                <!--数据区域：用表格展示数据-->   
+             <!--数据区域：用表格展示数据-->   
                 <div id="data">            
-                    <table id="datalist">
+                  <table id="datalist">
                     <tr>
-                        <th class="width120">物品ID</th>
+                        <th>物品ID</th>
                         <th>物品名称</th>
                         <th>类型</th>
-                        <th class="width120">仓库位置</th>>
-                        <th class="width100">剩余库存</th> 
-                        <th class="width100">出库总数</th> 
-                        <th class="width120">操作</th>
+                        <th>仓库位置</th>
+                        <th>剩余库存</th>
+                        <th>出库总数</th>
+                        <th>操作</th>
                     </tr>
+
+
                    <?php if(is_array($res['res'])): $i = 0; $__LIST__ = $res['res'];if( count($__LIST__)==0 ) : echo "$empty" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                         <td><?php echo ($vo["id"]); ?></td>
                         <td><?php echo ($vo["name"]); ?></td>
@@ -115,9 +115,8 @@
                         <td><?php echo ($vo["output_sum"]); ?> </td>              
                         <td><a href="/index.php/Output/item/id/<?php echo ($vo["id"]); ?>" title="出库操作">出库操作</a></td>
                     </tr><?php endforeach; endif; else: echo "$empty" ;endif; ?>                     
-
-                </table>
-                </div>                    
+                  </table> 
+                </div>   
                 <!--分页-->
                 <div id="pages">
                     <?php echo ($res['page']); ?>
