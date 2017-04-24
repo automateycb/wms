@@ -14,7 +14,7 @@ class GoodsModel extends Model {
     // 第六个参数： 规则什么时候生效： 1：添加时生效 2：修改时生效 3：所有情况都生效
     protected $_validate = array(
         array('name','require','名称不能为空',1),
-        array('name', '', '名称已经存在！', 1, 'unique', 1),
+        //array('name', '', '名称已经存在！', 1, 'unique', 1),
         array('sn', '', '编号已经存在！', 1, 'unique', 1),
         array('name', '1,20', '名称最长不能超过 20 个字符！', 1, 'length', 3),
         //array('brand_id','require','品牌不能为空',1),

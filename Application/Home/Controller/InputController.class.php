@@ -331,7 +331,8 @@ class InputController extends PublicController{
                 $data['name']= $objPHPExcel->getActiveSheet()->getCell("A".$i)->getValue();
                 $data['asset_number']= $objPHPExcel->getActiveSheet()->getCell("B".$i)->getValue();
                 $data['position']= $objPHPExcel->getActiveSheet()->getCell("C".$i)->getValue();
-                $data['sum']= $objPHPExcel->getActiveSheet()->getCell("D".$i)->getValue();
+                $sum=$objPHPExcel->getActiveSheet()->getCell("D".$i)->getValue();
+                //$data['sum']= $objPHPExcel->getActiveSheet()->getCell("D".$i)->getValue();
                 $data['price']= $objPHPExcel->getActiveSheet()->getCell("E".$i)->getValue();
                 $data['brand_id']= $objPHPExcel->getActiveSheet()->getCell("F".$i)->getValue();
                 $data['category_id']= $objPHPExcel->getActiveSheet()->getCell("G".$i)->getValue();
@@ -339,17 +340,40 @@ class InputController extends PublicController{
                 //  if(M('Contacts')->where("phone='".$data['phone']."'")->find()){
                     //如果存在相同联系人。判断条件：电话 两项一致，上面注释的代码是用姓名/电话判断
                // }else{
-                $model=D('Goods');
-                 //检验是否是有效数据
-                if($model->create($data,1)){
-                    //添加
-                     $model->add($data);
-                    // import_category($data);
-                     $j++;
+                //数量大于1
+                
+                if($sum>1)
+                {
+                    for($k=1;$k<($sum+1);$k++){
+                        $data['sum']=1;
+                        $data['asset_number'];
+                        $model=D('Goods');
+                        //检验是否是有效数据
+                        if($model->create($data,1)){
+                            //添加
+                             $model->add($data);
+                            // import_category($data);
+                             $j++;
+                        }
+                        $data['asset_number']++;
+                    }
                 }
-
+                else if($sum==1){
+                    $data['sum']=1;
+                    $model=D('Goods');
+                     //检验是否是有效数据
+                    if($model->create($data,1)){
+                        //添加
+                         $model->add($data);
+                        // import_category($data);
+                         $j++;
+                    }
+                }
+                else{
+                    $this->error("入库数量为空或者填写错误！请正确填写");
+                }
             }
-            unlink($file_name);
+            //unlink($file_name);
             //User_log('批量导入联系人，数量：'.$j);
             $this->success('导入成功！本次导入物品数量：'.$j);
         }else
