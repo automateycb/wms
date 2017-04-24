@@ -8,6 +8,7 @@
         <script src="/Public/js/jquery-1.9.1.min.js"></script>
         <script src="/Public/layer/layer.js"></script>
         <script src="/Public/js/user.js"></script>
+        <script src="/Public/js/love.js"></script>
     </head>
     <body>
         <!--Logo区域开始-->

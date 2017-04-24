@@ -8,6 +8,7 @@
         <script src="/Public/js/jquery-1.9.1.min.js"></script>
         <script src="/Public/layer/layer.js"></script>
         <script src="/Public/js/user.js"></script>
+        <script src="/Public/js/love.js"></script>
     </head>
     <body>
         <!--Logo区域开始-->
@@ -119,7 +120,7 @@
 
         <div id="footer">
             <p>CSOT AUTO 自主使用仓库管理系统</p>
-            <p>版权所有 ycb设计  mail:yanchaobin@tcl.com </p>
+            <p>ycb设计  mail:yanchaobin@tcl.com </p>
         </div>
     </body>
 </html>

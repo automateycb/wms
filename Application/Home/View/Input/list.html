@@ -8,12 +8,12 @@
                 
             <!--查询-->
             <div class="search_add">                        
-                    <div>物品ID：<input type="text" class="text_search width50" value="{:I('get.id')}" name='id'/></div>                            
+                    <div>物品ID：<input type="text" class="text_search width70" value="{:I('get.id')}" name='id'/></div>                            
                     <div>名称：<input type="text" class="width70 text_search" value="{:I('get.name')}" name='name'/></div>
 
                     <div>
                         排序：
-                        <select class="select_search width70" name='order'>
+                        <select class="select_search width100" name='order'>
                             <option value="id asc">默认</option>
                             <option value="price asc" <php> if( I('get.order')=='price asc' ){ echo 'selected';} </php> >  ↑ 价格从低到高 </option>                        
                             <option value="price desc" <php> if( I('get.order')=='price desc' ){ echo 'selected';} </php> > ↓ 价格从高到低 </option>
@@ -26,7 +26,7 @@
 
                     <div>
                         品牌：
-                        <select class="select_search width70" name='brand' id='status'>
+                        <select class="select_search width100" name='brand' id='status'>
                             <option value="">全部</option>
                             <!--遍历品牌-->                            
                             <volist name="brand" id="vo">
@@ -39,7 +39,7 @@
                     
                     <div>
                     类型：
-                    <select class="select_search" name='category'>
+                    <select class="select_search width100" name='category'>
                     <option value="">全部</option>
                     <!--遍历类型-->                            
                         <volist name="category" id="vo">

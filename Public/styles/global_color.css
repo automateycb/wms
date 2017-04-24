@@ -299,8 +299,9 @@ input.btn_search:hover,input.btn_search_large:hover
 }
 input.btn_add,input.btn_add:hover
 {
-    background: url(../images/btn_bg.png) no-repeat left top;
-    color: #fff;
+   /* background: url(../images/btn_bg.png) no-repeat left top;*/
+    background-color:#00BFFF ;
+    color: #000;
     border:0;
 }
 input.btn_modify,input.btn_modify:hover

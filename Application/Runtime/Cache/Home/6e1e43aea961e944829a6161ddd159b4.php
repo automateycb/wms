@@ -46,12 +46,12 @@
                 
             <!--查询-->
             <div class="search_add">                        
-                    <div>物品ID：<input type="text" class="text_search width50" value="<?php echo I('get.id');?>" name='id'/></div>                            
+                    <div>物品ID：<input type="text" class="text_search width70" value="<?php echo I('get.id');?>" name='id'/></div>                            
                     <div>名称：<input type="text" class="width70 text_search" value="<?php echo I('get.name');?>" name='name'/></div>
 
                     <div>
                         排序：
-                        <select class="select_search width70" name='order'>
+                        <select class="select_search width100" name='order'>
                             <option value="id asc">默认</option>
                             <option value="price asc" <?php if( I('get.order')=='price asc' ){ echo 'selected';} ?> >  ↑ 价格从低到高 </option>                        
                             <option value="price desc" <?php if( I('get.order')=='price desc' ){ echo 'selected';} ?> > ↓ 价格从高到低 </option>
@@ -64,7 +64,7 @@
 
                     <div>
                         品牌：
-                        <select class="select_search width70" name='brand' id='status'>
+                        <select class="select_search width100" name='brand' id='status'>
                             <option value="">全部</option>
                             <!--遍历品牌-->                            
                             <?php if(is_array($brand)): $i = 0; $__LIST__ = $brand;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>" <?php if( I('get.brand')==$vo['id'] ){ echo 'selected';} ?>  ><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>                            
@@ -75,7 +75,7 @@
                     
                     <div>
                     类型：
-                    <select class="select_search" name='category'>
+                    <select class="select_search width100" name='category'>
                     <option value="">全部</option>
                     <!--遍历类型-->                            
                         <?php if(is_array($category)): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>" <?php if( I('get.category')==$vo['id'] ){ echo 'selected';} ?>  ><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>                            

@@ -41,7 +41,7 @@
         
         <!--主要区域开始-->
         <div id="main">
-        <form action="/index.php/Output/record/p/13.html" method="get" id="search">
+        <form action="/index.php/Output/record" method="get" id="search">
                 <!--查询-->
                 <div class="search_add">                        
                     <!-- <div>账号：<span class="readonly width70"><?php echo ($infos["nickname"]); ?></span></div> -->
