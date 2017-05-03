@@ -8,14 +8,15 @@
         <script src="/Public/js/jquery-1.9.1.min.js"></script>
         <script src="/Public/layer/layer.js"></script>
         <script src="/Public/js/user.js"></script>
+        <script src="/Public/js/love.js"></script>
     </head>
     <body>
         <!--Logo区域开始-->
         <div id="header">
             <img src="/Public/images/logo.png" alt="logo" class="left"/>
-            <span style="font-weight:bold;font-size:15px">Hi!</span>  
-            <span style="color:red;font-weight:bold;font-size:15px"><?php echo ($infos["nickname"]); ?></span> 
-            <a href="<?php echo U('Login/loginout');?>" style="font-size:15px" >[退出]</a>            
+            <span style="font-weight:bold;font-size:16px">Hi!</span>  
+            <span style="color:red;font-weight:bold;font-size:16px"><?php echo ($infos["nickname"]); ?></span> 
+            <a href="<?php echo U('Login/loginout');?>" style="font-size:16px" >[退出]</a>            
         </div>
         <!--Logo区域结束-->
         

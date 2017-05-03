@@ -2,20 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>AUTO-仓储管理系统</title>
+        <title>AUTO-仓库管理系统</title>
         <link type="text/css" rel="stylesheet" media="all" href="/Public/styles/global.css" />
         <link type="text/css" rel="stylesheet" media="all" href="/Public/styles/global_color.css" /> 
         <script src="/Public/js/jquery-1.9.1.min.js"></script>
         <script src="/Public/layer/layer.js"></script>
         <script src="/Public/js/user.js"></script>
+        <script src="/Public/js/love.js"></script>
     </head>
     <body>
         <!--Logo区域开始-->
         <div id="header">
             <img src="/Public/images/logo.png" alt="logo" class="left"/>
-            <span style="font-weight:bold;font-size:15px">Hi!</span>  
-            <span style="color:red;font-weight:bold;font-size:15px"><?php echo ($infos["nickname"]); ?></span> 
-            <a href="<?php echo U('Login/loginout');?>" style="font-size:15px" >[退出]</a>            
+            <span style="font-weight:bold;font-size:16px">Hi!</span>  
+            <span style="color:red;font-weight:bold;font-size:16px"><?php echo ($infos["nickname"]); ?></span> 
+            <a href="<?php echo U('Login/loginout');?>" style="font-size:16px" >[退出]</a>            
         </div>
         <!--Logo区域结束-->
         
@@ -25,14 +26,11 @@
                 <li><a href="<?php echo U('Index/index');?>" class="index_off"></a></li>
                 <li><a href="<?php echo U('Role/index');?>"  class="role_off"></a></li>
                 <li><a href="<?php echo U('Admin/index');?>" class="admin_off"></a></li>
-             <!--    <li><a href="<?php echo U('Store/index');?>" class="store_off"></a></li>
-                <li><a href="<?php echo U('Account/index');?>" class="emp_off"></a></li>
-                <li><a href="<?php echo U('Buy/index');?>"   class="buy_off"></a></li> -->
                 <li><a href="<?php echo U('Input/index');?>" class="input_off"></a></li>   
                 <li><a href="<?php echo U('Output/index');?>" class="output_off"></a></li>       
-               <!--  <li><a href="<?php echo U('Sell/index');?>" class="sell_off"></a></li> -->
                 <li><a href="<?php echo U('Goods/index');?>" class="warehouse_off"></a></li>
-            <!--     <li><a href="<?php echo U('User/info');?>" class="information_off"></a></li>
+                <li><a href="<?php echo U('Issue/index');?>" class="issue_off"></a></li>
+               <!--     <li><a href="<?php echo U('User/info');?>" class="information_off"></a></li>
                 <li><a href="<?php echo U('User/pwd');?>" class="password_off"></a></li> -->
             </ul>            
         </div>
@@ -44,9 +42,9 @@
         <!--主要区域开始-->
         <div id="main">            
                 
-                <div class="text_info clearfix"><span>物品编号：</span></div>
+                <div class="text_info clearfix"><span>物品ID：</span></div>
                 <div class="input_info">
-                    <input type="text" class="width200" name='sn' value='<?php echo ($info["sn"]); ?>' disabled/>
+                    <input type="text" class="width200" name='id' value='<?php echo ($info["id"]); ?>' disabled/>
                     <span class="required">*</span>
                     <div class="validate_msg_medium">不能为空，且为20长度的字母、数字和汉字的组合</div>
                 </div> 
@@ -152,8 +150,8 @@
 
 
         <div id="footer">
-            <p>CSOT AUTO 自主使用仓库管理系统</p>
-            <p>版权所有 ycb设计  qq:1150756674 </p>
+            <p>CSOT AUTO 自主使用仓库管理系统V1.2版</p>
+            <p>ycb设计  mail:yanchaobin@tcl.com </p>
         </div>
     </body>
 </html>

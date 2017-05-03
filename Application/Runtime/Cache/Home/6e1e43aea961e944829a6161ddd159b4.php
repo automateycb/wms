@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>AUTO-仓储管理系统</title>
+        <title>AUTO-仓库管理系统</title>
         <link type="text/css" rel="stylesheet" media="all" href="/Public/styles/global.css" />
         <link type="text/css" rel="stylesheet" media="all" href="/Public/styles/global_color.css" /> 
         <script src="/Public/js/jquery-1.9.1.min.js"></script>
@@ -14,9 +14,9 @@
         <!--Logo区域开始-->
         <div id="header">
             <img src="/Public/images/logo.png" alt="logo" class="left"/>
-            <span style="font-weight:bold;font-size:15px">Hi!</span>  
-            <span style="color:red;font-weight:bold;font-size:15px"><?php echo ($infos["nickname"]); ?></span> 
-            <a href="<?php echo U('Login/loginout');?>" style="font-size:15px" >[退出]</a>            
+            <span style="font-weight:bold;font-size:16px">Hi!</span>  
+            <span style="color:red;font-weight:bold;font-size:16px"><?php echo ($infos["nickname"]); ?></span> 
+            <a href="<?php echo U('Login/loginout');?>" style="font-size:16px" >[退出]</a>            
         </div>
         <!--Logo区域结束-->
         
@@ -110,6 +110,15 @@
                     <div>
                             <input type="button" value="导出数据" class="btn_add" onclick="location.href='/index.php/Input/expUser';" />
                     </div>
+
+                    <div>
+                    </div>
+
+                    <div>
+                            <input type="button" value="物品表导入示例下载" class="btn_ex" onclick="location.href='/index.php/Input/table_download';" />
+                    </div>
+
+
             </div>
 
                             <!--数据区域：用表格展示数据-->                   
@@ -302,7 +311,7 @@
 
 
         <div id="footer">
-            <p>CSOT AUTO 自主使用仓库管理系统</p>
+            <p>CSOT AUTO 自主使用仓库管理系统V1.2版</p>
             <p>ycb设计  mail:yanchaobin@tcl.com </p>
         </div>
     </body>

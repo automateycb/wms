@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>AUTO-仓储管理系统</title>
+        <title>AUTO-仓库管理系统</title>
         <link type="text/css" rel="stylesheet" media="all" href="/Public/styles/global.css" />
         <link type="text/css" rel="stylesheet" media="all" href="/Public/styles/global_color.css" /> 
         <script src="/Public/js/jquery-1.9.1.min.js"></script>
@@ -14,9 +14,9 @@
         <!--Logo区域开始-->
         <div id="header">
             <img src="/Public/images/logo.png" alt="logo" class="left"/>
-            <span style="font-weight:bold;font-size:15px">Hi!</span>  
-            <span style="color:red;font-weight:bold;font-size:15px"><?php echo ($infos["nickname"]); ?></span> 
-            <a href="<?php echo U('Login/loginout');?>" style="font-size:15px" >[退出]</a>            
+            <span style="font-weight:bold;font-size:16px">Hi!</span>  
+            <span style="color:red;font-weight:bold;font-size:16px"><?php echo ($infos["nickname"]); ?></span> 
+            <a href="<?php echo U('Login/loginout');?>" style="font-size:16px" >[退出]</a>            
         </div>
         <!--Logo区域结束-->
         
@@ -42,12 +42,17 @@
         <!--主要区域开始-->
         <div id="main">
             <form action="" method="">
-                <!--查询-->
+                <!--增加-->
                 <div class="search_add">
-                    <input type="button" value="增加" class="btn_add" onclick="location.href='/index.php/Issue/add';" />
-                </div>  
-                
-                
+                    <div>
+                        <input type="button" value="系统说明文档下载" class="btn_ex" onclick="location.href='/index.php/Issue/test';" />
+                    </div>
+
+                    <div>
+                        <input type="button" value="增加ISSUE" class="width200 btn_add" onclick="location.href='/index.php/Issue/add';" />
+                    </div>
+                </div>
+                                
                 <!--数据区域：用表格展示数据-->     
                 <div id="data">                      
                     <table id="datalist">
@@ -55,17 +60,17 @@
                             <th>问题 ID</th>
                             <th>问题名称</th>
                             <th>提问人</th>
-                            <th>类型</th>
+                         <!--    <th>类型</th> -->
                             <th>具体内容</th>
                             <th>时间</th>
                             <th class="td_modi"></th>
                         </tr>  
                   
-<?php if(is_array($res['res'])): $i = 0; $__LIST__ = $res['res'];if( count($__LIST__)==0 ) : echo "$empty" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                    <?php if(is_array($res['res'])): $i = 0; $__LIST__ = $res['res'];if( count($__LIST__)==0 ) : echo "$empty" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                             <td><?php echo ($vo["id"]); ?></td>
                             <td><?php echo ($vo["name"]); ?></td>
                             <td><?php echo ($vo["username"]); ?></td>
-                            <td><?php echo ($vo["type"]); ?></td>
+                           <!--  <td><?php echo ($vo["issuecategory_name"]); ?></td> -->
                             <td><?php echo ($vo["description"]); ?></td>
                             <td><?php echo date('Y-m-d H:i:s',$vo['time']) ;?></td>
                             <td>
@@ -130,7 +135,7 @@
 
 
         <div id="footer">
-            <p>CSOT AUTO 自主使用仓库管理系统</p>
+            <p>CSOT AUTO 自主使用仓库管理系统V1.2版</p>
             <p>ycb设计  mail:yanchaobin@tcl.com </p>
         </div>
     </body>

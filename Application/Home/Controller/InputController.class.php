@@ -11,7 +11,6 @@ class InputController extends PublicController{
         //获取所有的类型
         $category=M('category')->field('id,name')->select();
         
-        
         //物品列表信息
         $res=D('Goods')->goods();
         
@@ -21,7 +20,6 @@ class InputController extends PublicController{
             'empty'     =>  '<tr><td colspan="10"><span class="empty">没有找到匹配的数据...</span></td></tr>',
             'brand'     =>  $brand,
             'category'  =>  $category,
-//           'attribute'=>  $attribute
             )
         );
         $this->display('list');
@@ -30,8 +28,7 @@ class InputController extends PublicController{
 	//编辑 增加
     public function add(){
 
-        //upload();
-   
+        //upload();   
         //分类列表
         $category=D('Category');
         $res=$category->field('id,name')->select();
@@ -323,7 +320,7 @@ class InputController extends PublicController{
             }
             $objPHPExcel = $objReader->load($file_name,$encode='utf-8');
             $sheet = $objPHPExcel->getSheet(0);
-            $highestRow = $sheet->getHighestRow(); // 取得总行数
+            $highestRow = $sheet->getHighestRow();       // 取得总行数
             $highestColumn = $sheet->getHighestColumn(); // 取得总列数
             $j=0;
             for($i=2;$i<=$highestRow;$i++)
@@ -340,8 +337,50 @@ class InputController extends PublicController{
                 //  if(M('Contacts')->where("phone='".$data['phone']."'")->find()){
                     //如果存在相同联系人。判断条件：电话 两项一致，上面注释的代码是用姓名/电话判断
                // }else{
+                //品牌转化
+                switch ($data['brand_id']) {
+                    case 'HP':
+                        $data['brand_id']=10;
+                        break;
+
+                    case 'Mitsubishi':
+                        $data['brand_id']=11;
+                        break;
+                    
+                    case '三星':
+                        $data['brand_id']=12;
+                         break;
+
+                    case 'LG':
+                        $data['brand_id']=13;
+                         break;
+
+                    default:
+                        $this->error("名称为".$data['brand_id']."的品牌不在系统中，请在系统中维护!");
+                        //$sum=0;
+                        break;
+                }
+
+                //类型转换
+                switch ($data['category_id']) {
+                    case 'PLC':
+                        $data['category_id']=1;
+                        break;
+
+                    case '服务器':
+                        $data['category_id']=10;
+                        break;
+
+                    case '显示器':
+                        $data['category_id']=11;
+                        break;
+                    
+                    default:
+                        $this->error("名称为".$data['category_id']."的类型不在系统中，请在系统中维护!");
+                        break;
+                }
+
                 //数量大于1
-                
                 if($sum>1)
                 {
                     for($k=1;$k<($sum+1);$k++){
@@ -352,9 +391,12 @@ class InputController extends PublicController{
                         if($model->create($data,1)){
                             //添加
                              $model->add($data);
-                            // import_category($data);
-                             $j++;
+                             $j++;     
                         }
+                        $res['goods_id']=M('goods')->max('id');
+                        $res['category_id']=$data['category_id'];
+                        $res && M('goods_category')->add($res);
+
                         $data['asset_number']++;
                     }
                 }
@@ -365,16 +407,17 @@ class InputController extends PublicController{
                     if($model->create($data,1)){
                         //添加
                          $model->add($data);
-                        // import_category($data);
                          $j++;
                     }
+                    $res['goods_id']=M('goods')->max('id');
+                    $res['category_id']=$data['category_id'];
+                    $res && M('goods_category')->add($res);
                 }
                 else{
                     $this->error("入库数量为空或者填写错误！请正确填写");
                 }
             }
-            //unlink($file_name);
-            //User_log('批量导入联系人，数量：'.$j);
+            unlink($file_name);
             $this->success('导入成功！本次导入物品数量：'.$j);
         }else
         {
@@ -382,35 +425,17 @@ class InputController extends PublicController{
         }
     }
 
-    // //上传文件
-    // public function upload()
-    // {
-    //     $config=array(
-    //         'maxSize'=>100*1024*1024*1024,
-    //         'mimes'=>array(),
-    //         'rootPath'=>'./Public/Uploads/',
-    //         'ext'=>array(),
-    //         'autoSub'=>true,
-    //     );
-    //     $upload = new \Think\Upload($config);// 实例化上传类
-    //     $depict=$_POST['depict'];
-    //     $info   =   $upload->upload(); // 上传文件
-    //     if(!$info){// 上传错误提示错误信息
-    //         $this->error($upload->getError());
-    //     }
-    //     else{// 上传成功
-
-    //         if($this->AddFile($info,$depict))//写入数据库
-    //         {
-    //             $this->success('上传成功！','view');
-    //         }
-    //         else{
-    //           //  $this->error('写入数据库失败');
-    //         }
-
-    //     }
-
-    // }
+    public function table_download(){
+        //import('ORG.Net.Http');
+        //调用类
+        $Http = new \Org\Net\Http();
+        $filename="Public\Uploads\物品表.xlsx";
+        $showname="goods.xlsx";
+        //转码   excel的默认编码格式为gb2312
+        $filename=iconv("utf-8","gb2312",$filename);
+        //$showname=iconv("utf-8","gb2312",$showname);
+        $Http::download($filename, $showname);
     
-    
+    }
+
 }

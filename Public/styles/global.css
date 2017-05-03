@@ -573,10 +573,22 @@ input.btn_add
 {
     height: 26px;
     line-height: 26px;
-    width: 71px;
+    width: 80px;
     text-align: center;
     overflow: hidden;
     padding-left: 0px;
+    font-weight: bold;
+
+}
+input.btn_ex
+{
+    height: 26px;
+    line-height: 26px;
+    width: 130px;
+    text-align: center;
+    overflow: hidden;
+    padding-left: 0px;
+    font-weight: bold;
 }
 input.btn_modify, input.btn_delete, input.btn_start, input.btn_pause
 {

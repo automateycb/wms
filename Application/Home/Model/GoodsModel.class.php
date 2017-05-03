@@ -23,14 +23,6 @@ class GoodsModel extends Model {
     //插入之前
     protected function _before_insert(&$data, $option){
         $data['time']=  time();
-        //$price=I('post.price');
-        //$data['price']= $price[0];
-
-        //购入总数量
-        //$count=I('post.count');
-        //$data['sum']= array_sum($count);
-        
-        //购入总价
         $data['total']= $data['price']*$data['sum'];
         $data['stock']=$data['sum']-$data['output_sum']; 
     }
@@ -63,57 +55,13 @@ class GoodsModel extends Model {
                 $res && M('goods_category')->add($res);
             }
         }
-        else{
-            //遍历赋值，并添加
-            foreach ( I('param.category_id/a') as $v) {
-                $res['category_id']=$v;
-                $res && M('goods_category')->add($res);
-            }
-        }
-        
-//         //属性id
-//         $res1['goods_id']=$data['id'];
-        
-//         $attrbute_id=I('post.attrbute_id/a');   //获取参数
-
-//         //判断是否 为数组 添加到val
-//         if(is_array($attrbute_id) ){
-            
-//             //遍历插入数据库
-//             foreach ($attrbute_id as $key => $value) {
-//                 $res1['attrbute_id']=$key;
-//                 $res1['val']=$value;
-//                 $res1 && M('goods_attrbute')->add($res1);  
-//             }
-               
-//         }        
-        
-        
-//         //判断属性列表是否是数组
-//         if(is_array( I('post.spec_item/a') )){
-            
-//             //获取参数
-//             $price=I('post.price/a');   //价格
-//             $count=I('post.count/a');   //库存
-            
-//             //获取商品属性
-//            $arr= self::info(I('post.spec_item/a'),$price,$count);
-
-//            //把字符串转为数组
-//            foreach ($arr as $key => $value) {
-//                $attr[]=explode(",",$value);
-//            }
-           
-//            //遍历赋值，并添加
-//             foreach ($attr as $value) {
-//                 $res['attrbute_id']='';
-//                 $res['attrbute_value']=$value[0].':'.$value[1];
-//                 $res['price']=$value[2];
-//                 $res['count']=$value[3];
-//                 $res && M('goods_attrbute')->add($res);  
-//             }
-            
-//         }
+        // else{
+        //     //遍历赋值，并添加
+        //     foreach ( I('param.category_id/a') as $v) {
+        //         $res['category_id']=$v;
+        //         $res && M('goods_category')->add($res);
+        //     }
+        // }
         
     }
     
@@ -421,16 +369,6 @@ class GoodsModel extends Model {
         return $result;
     }
 
-    //Excel导入物品类型
-    public function import_category($data){
-
-        // $model_category=D('Goods_category');
-        //取出物品信息
-        // $goods_info=M('goods')->where(array('name'=>$data['name'])->find();
-        // $data('goods_id')=$goods_info['id'];
-        // $model_category->add($data);
-
-    }
 
 
     //减库存

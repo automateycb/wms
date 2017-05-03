@@ -5,9 +5,15 @@ use Think\Controller;
 class IssueController extends PublicController{
 
     public function index(){
+        $issue=M('issuecategory')->field('id,name')->select();
         $model=D('Issue');
         $res=$model->issue();
-        $this->assign('res',$res);
+        //分配
+        $this->assign(array(
+            'res'       =>  $res,
+            'issue'     =>  $issue,
+            )
+        );
         
         $this->display('list');
     }
@@ -63,7 +69,20 @@ class IssueController extends PublicController{
             
         }
             
-    }   
+    } 
+
+    //下载文件
+    public function test(){
+        //import('ORG.Net.Http');
+        //调用类
+        $Http = new \Org\Net\Http();
+        $filename="Public\Uploads\AUTO仓库管理系统说明文档.pptx";
+        $showname="ReadMe.pptx";
+        //转码   excel的默认编码格式为gb2312
+        $filename=iconv("utf-8","gb2312",$filename);
+        //$showname=iconv("utf-8","gb2312",$showname);
+        $Http::download($filename, $showname);
+    }  
     
 
 

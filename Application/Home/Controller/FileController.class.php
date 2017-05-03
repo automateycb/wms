@@ -130,16 +130,16 @@ class FileController extends Controller {
         header("Accept-Ranges:bytes");//可以忽略
         header("Content-Length: ".$file_size);//原文这里是Accept-Length经查阅http协议无此项
         header("Content-Disposition:attachment;filename=".$file_name);
-//字节技术器，纪录当前现在字节数
+        //字节技术器，纪录当前现在字节数
         $count = 0;
         while(!feof($fp) && $file_size-$count>0){
-//从$fp打开的文件流中每次读取$buffer大小的数据
+        //从$fp打开的文件流中每次读取$buffer大小的数据
             $file_data = fread($fp,$buffer);
             $count+=$buffer;
-//将读取到的数据读取出来
+            //将读取到的数据读取出来
             echo $file_data;
         }
-//关闭文件流
+         //关闭文件流
         fclose($fp);
     }
   //文件编辑页面

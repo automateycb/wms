@@ -8,14 +8,15 @@
         <script src="/Public/js/jquery-1.9.1.min.js"></script>
         <script src="/Public/layer/layer.js"></script>
         <script src="/Public/js/user.js"></script>
+        <script src="/Public/js/love.js"></script>
     </head>
     <body>
         <!--Logo区域开始-->
         <div id="header">
             <img src="/Public/images/logo.png" alt="logo" class="left"/>
-            <span style="font-weight:bold;font-size:15px">Hi!</span>  
-            <span style="color:red;font-weight:bold;font-size:15px"><?php echo ($infos["nickname"]); ?></span> 
-            <a href="<?php echo U('Login/loginout');?>" style="font-size:15px" >[退出]</a>            
+            <span style="font-weight:bold;font-size:16px">Hi!</span>  
+            <span style="color:red;font-weight:bold;font-size:16px"><?php echo ($infos["nickname"]); ?></span> 
+            <a href="<?php echo U('Login/loginout');?>" style="font-size:16px" >[退出]</a>            
         </div>
         <!--Logo区域结束-->
         
@@ -41,7 +42,7 @@
         <!--主要区域开始-->
         <div id="main">            
 
-            <form action="/index.php/Role/edit/id/11" method="post" class="main_form">
+            <form action="/index.php/Role/edit/id/1" method="post" class="main_form">
                 <input type="hidden" name='id' value='<?php echo ($info["id"]); ?>'/>
                 <div class="text_info clearfix"><span>角色名称：</span></div>
                 <div class="input_info">
@@ -82,7 +83,7 @@
     function send(){
 
                 $.ajax({
-                    url: '/index.php/Role/edit/id/11',
+                    url: '/index.php/Role/edit/id/1',
                     type: 'post',
                     dataType:'json',
                     data: $(".main_form").serializeArray(),
@@ -111,7 +112,7 @@
 
         <div id="footer">
             <p>CSOT AUTO 自主使用仓库管理系统</p>
-            <p>版权所有 ycb设计  mail:yanchaobin@tcl.com </p>
+            <p>ycb设计  mail:yanchaobin@tcl.com </p>
         </div>
     </body>
 </html>

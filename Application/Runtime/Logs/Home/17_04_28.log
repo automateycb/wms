@@ -1,0 +1,133 @@
+[ 2017-04-28T09:53:04+08:00 ] 127.0.0.1 /index.php/Issue/delete/id/30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001999s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0400s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2048] Declaration of Home\Model\IssueModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\IssueModel.class.php 第 88 行.
+SQL: SHOW COLUMNS FROM `wms_issue` [ RunTime:0.0420s ]
+SQL: DELETE FROM `wms_issue` WHERE `id` = 30 [ RunTime:0.0830s ]
+
+[ 2017-04-28T09:53:52+08:00 ] 127.0.0.1 /index.php/Issue/test
+ERR: Public\Uploads\Readme.xlsx下载文件不存在！
+
+[ 2017-04-28T10:05:53+08:00 ] 127.0.0.1 /index.php/Input/delete/id/37
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0470s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 457 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0440s ]
+SQL: DELETE FROM `wms_goods` WHERE `id` = 37 [ RunTime:0.0700s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.0620s ]
+SQL: DELETE FROM `wms_goods_category` WHERE `goods_id` = 37 [ RunTime:0.0330s ]
+SQL: SHOW COLUMNS FROM `wms_goods_attrbute` [ RunTime:0.0570s ]
+SQL: DELETE FROM `wms_goods_attrbute` WHERE `goods_id` = 37 [ RunTime:0.0190s ]
+
+[ 2017-04-28T10:05:58+08:00 ] 127.0.0.1 /index.php/Input/delete/id/38
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0330s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 457 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0350s ]
+SQL: DELETE FROM `wms_goods` WHERE `id` = 38 [ RunTime:0.0330s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.0410s ]
+SQL: DELETE FROM `wms_goods_category` WHERE `goods_id` = 38 [ RunTime:0.0200s ]
+SQL: SHOW COLUMNS FROM `wms_goods_attrbute` [ RunTime:0.0610s ]
+SQL: DELETE FROM `wms_goods_attrbute` WHERE `goods_id` = 38 [ RunTime:0.0010s ]
+
+[ 2017-04-28T10:07:28+08:00 ] 127.0.0.1 /index.php/Input/delete/id/47
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0380s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0030s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 457 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0350s ]
+SQL: DELETE FROM `wms_goods` WHERE `id` = 47 [ RunTime:0.0580s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.0390s ]
+SQL: DELETE FROM `wms_goods_category` WHERE `goods_id` = 47 [ RunTime:0.0250s ]
+SQL: SHOW COLUMNS FROM `wms_goods_attrbute` [ RunTime:0.0400s ]
+SQL: DELETE FROM `wms_goods_attrbute` WHERE `goods_id` = 47 [ RunTime:0.0010s ]
+
+[ 2017-04-28T10:07:33+08:00 ] 127.0.0.1 /index.php/Input/delete/id/48
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0370s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0030s ]
+NOTIC: [2048] Declaration of Home\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\GoodsModel.class.php 第 457 行.
+SQL: SHOW COLUMNS FROM `wms_goods` [ RunTime:0.0360s ]
+SQL: DELETE FROM `wms_goods` WHERE `id` = 48 [ RunTime:0.0460s ]
+SQL: SHOW COLUMNS FROM `wms_goods_category` [ RunTime:0.0610s ]
+SQL: DELETE FROM `wms_goods_category` WHERE `goods_id` = 48 [ RunTime:0.0280s ]
+SQL: SHOW COLUMNS FROM `wms_goods_attrbute` [ RunTime:0.0440s ]
+SQL: DELETE FROM `wms_goods_attrbute` WHERE `goods_id` = 48 [ RunTime:0.0010s ]
+
+[ 2017-04-28T10:52:04+08:00 ] 127.0.0.1 /index.php/Admin/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003999s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0540s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '38' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0030s ]
+NOTIC: [2048] Declaration of Home\Model\AdminModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\AdminModel.class.php 第 177 行.
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0410s ]
+NOTIC: [8] Undefined index: validate E:\wamp\www\wms\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto E:\wamp\www\wms\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `wms_admin` (`nickname`,`username`,`password`,`tel`,`email`,`create_time`) VALUES ('admin_test','admin_test','5701e1fc38a45821bc7687a3d8530720','13544060490','admin@tcl.com','1493347924') [ RunTime:0.0640s ]
+SQL: SHOW COLUMNS FROM `wms_admin_role` [ RunTime:0.0320s ]
+SQL: INSERT INTO `wms_admin_role` (`role_id`,`admin_id`) VALUES ('1','41') [ RunTime:0.0680s ]
+
+[ 2017-04-28T14:05:45+08:00 ] 127.0.0.1 /index.php/Admin/delete/id/40
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0360s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '41' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2048] Declaration of Home\Model\AdminModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\AdminModel.class.php 第 177 行.
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0320s ]
+SQL: DELETE FROM `wms_admin` WHERE `id` = 40 [ RunTime:0.0580s ]
+SQL: SHOW COLUMNS FROM `wms_admin_role` [ RunTime:0.0430s ]
+SQL: DELETE FROM `wms_admin_role` WHERE `admin_id` = 40 [ RunTime:0.0350s ]
+
+[ 2017-04-28T14:06:12+08:00 ] 127.0.0.1 /index.php/Admin/delete/id/37
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0320s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '41' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0030s ]
+NOTIC: [2048] Declaration of Home\Model\AdminModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\AdminModel.class.php 第 177 行.
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0300s ]
+SQL: DELETE FROM `wms_admin` WHERE `id` = 37 [ RunTime:0.0880s ]
+SQL: SHOW COLUMNS FROM `wms_admin_role` [ RunTime:0.0320s ]
+SQL: DELETE FROM `wms_admin_role` WHERE `admin_id` = 37 [ RunTime:0.1290s ]
+
+[ 2017-04-28T14:06:17+08:00 ] 127.0.0.1 /index.php/Admin/delete/id/38
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0390s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '41' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0030s ]
+NOTIC: [2048] Declaration of Home\Model\AdminModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\AdminModel.class.php 第 177 行.
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0370s ]
+SQL: DELETE FROM `wms_admin` WHERE `id` = 38 [ RunTime:0.0580s ]
+SQL: SHOW COLUMNS FROM `wms_admin_role` [ RunTime:0.0470s ]
+SQL: DELETE FROM `wms_admin_role` WHERE `admin_id` = 38 [ RunTime:0.0490s ]
+
+[ 2017-04-28T14:07:15+08:00 ] 127.0.0.1 /index.php/Admin/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0340s ]
+SQL: SELECT a.*,a.id as user_id,GROUP_CONCAT(DISTINCT c.role_name) as role_name,e.*,e.id as privliege_id,GROUP_CONCAT(DISTINCT e.controller) as authority FROM wms_admin a LEFT JOIN wms_admin_role as b on a.id=b.admin_id LEFT JOIN wms_role as c on c.id=b.role_id LEFT JOIN wms_role_privilege as d on c.id=d.role_id LEFT JOIN wms_privilege as e on d.privliege_id=e.id  WHERE a.id = '41' GROUP BY b.admin_id LIMIT 1   [ RunTime:0.0030s ]
+NOTIC: [2048] Declaration of Home\Model\AdminModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) E:\wamp\www\wms\Application\Home\Model\AdminModel.class.php 第 177 行.
+SQL: SHOW COLUMNS FROM `wms_admin` [ RunTime:0.0390s ]
+NOTIC: [8] Undefined index: validate E:\wamp\www\wms\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto E:\wamp\www\wms\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `wms_admin` (`nickname`,`username`,`password`,`tel`,`email`,`create_time`) VALUES ('yanchaobin','yanchaobin','4492089a478d6217e52d1768054e571a','13544060490','yanchaobin@tcl.com','1493359635') [ RunTime:0.0850s ]
+SQL: SHOW COLUMNS FROM `wms_admin_role` [ RunTime:0.0340s ]
+SQL: INSERT INTO `wms_admin_role` (`role_id`,`admin_id`) VALUES ('1','42') [ RunTime:0.0670s ]
+

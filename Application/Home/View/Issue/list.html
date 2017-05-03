@@ -4,12 +4,17 @@
         <!--主要区域开始-->
         <div id="main">
             <form action="" method="">
-                <!--查询-->
+                <!--增加-->
                 <div class="search_add">
-                    <input type="button" value="增加" class="btn_add" onclick="location.href='__CONTROLLER__/add';" />
-                </div>  
-                
-                
+                    <div>
+                        <input type="button" value="系统说明文档下载" class="btn_ex" onclick="location.href='__CONTROLLER__/test';" />
+                    </div>
+
+                    <div>
+                        <input type="button" value="增加ISSUE" class="width200 btn_add" onclick="location.href='__CONTROLLER__/add';" />
+                    </div>
+                </div>
+                                
                 <!--数据区域：用表格展示数据-->     
                 <div id="data">                      
                     <table id="datalist">
@@ -17,18 +22,18 @@
                             <th>问题 ID</th>
                             <th>问题名称</th>
                             <th>提问人</th>
-                            <th>类型</th>
+                         <!--    <th>类型</th> -->
                             <th>具体内容</th>
                             <th>时间</th>
                             <th class="td_modi"></th>
                         </tr>  
                   
-<volist name="res['res']" id='vo' empty="$empty">                                                                         
+                    <volist name="res['res']" id='vo' empty="$empty">                                                 
                         <tr>
                             <td>{$vo.id}</td>
                             <td>{$vo.name}</td>
                             <td>{$vo.username}</td>
-                            <td>{$vo.type}</td>
+                           <!--  <td>{$vo.issuecategory_name}</td> -->
                             <td>{$vo.description}</td>
                             <td>{:date('Y-m-d H:i:s',$vo['time']) }</td>
                             <td>
@@ -36,7 +41,7 @@
                                 <input type="button" value="删除" class="btn_delete" onclick="deletes('__CONTROLLER__/delete/id/{$vo.id}');" />
                             </td>
                         </tr>
-</volist>                           
+                    </volist>                           
 
                     </table>
                 </div> 
